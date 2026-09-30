@@ -12,10 +12,10 @@
 
     <meta
         name="description"
-        content="Responsive accessible enterprise dashboard with dynamic REST API product data"
+        content="ProductFlow - Enterprise Product Management Dashboard"
     >
 
-    <title>Enterprise Dashboard</title>
+    <title>ProductFlow | Dashboard</title>
 
     <link
         rel="stylesheet"
@@ -28,62 +28,70 @@
 <body>
 
     <!-- Skip Navigation -->
+
     <a
-        class="skip-link"
         href="#main-content"
+        class="skip-link"
     >
         Skip to main content
     </a>
 
 
     <!-- ==================================================
-         Header
+         HEADER
          ================================================== -->
 
     <header class="site-header">
 
-        <div class="header-content">
+        <a
+            href="#dashboard"
+            class="brand"
+        >
+            ProductFlow
+        </a>
 
-            <a
-                href="#"
-                class="brand"
-                aria-label="Enterprise Dashboard Home"
-            >
-                Enterprise Dashboard
+
+        <nav
+            class="primary-nav"
+            aria-label="Primary navigation"
+        >
+
+            <a href="#dashboard">
+                Dashboard
             </a>
 
+            <a href="#products">
+                Products
+            </a>
 
-            <nav aria-label="Primary navigation">
+            <a href="#reports">
+                Reports
+            </a>
 
-                <ul class="nav-list">
+            <a href="#settings">
+                Settings
+            </a>
 
-                    <li>
-                        <a href="#dashboard">
-                            Dashboard
-                        </a>
-                    </li>
+        </nav>
 
-                    <li>
-                        <a href="#products">
-                            Products
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#reports">
-                            Reports
-                        </a>
-                    </li>
+        <div class="user-area">
 
-                    <li>
-                        <a href="#settings">
-                            Settings
-                        </a>
-                    </li>
+            <span
+                id="user-name"
+                class="user-name"
+            >
+                Admin User
+            </span>
 
-                </ul>
 
-            </nav>
+            <button
+                type="button"
+                id="logout-button"
+                class="secondary-button"
+            >
+                Logout
+            </button>
 
         </div>
 
@@ -91,50 +99,43 @@
 
 
     <!-- ==================================================
-         Page Layout
+         PAGE LAYOUT
          ================================================== -->
 
     <div class="page-layout">
 
 
-        <!-- Sidebar -->
+        <!-- ==================================================
+             SIDEBAR
+             ================================================== -->
 
         <aside
             class="sidebar"
-            aria-label="Dashboard sidebar"
+            aria-label="Dashboard navigation"
         >
 
-            <nav aria-label="Sidebar navigation">
+            <div class="sidebar-title">
+                Workspace
+            </div>
 
-                <h2>Menu</h2>
 
-                <ul>
+            <nav>
 
-                    <li>
-                        <a href="#dashboard">
-                            Overview
-                        </a>
-                    </li>
+                <a href="#dashboard">
+                    Dashboard
+                </a>
 
-                    <li>
-                        <a href="#products">
-                            Products
-                        </a>
-                    </li>
+                <a href="#products">
+                    Products
+                </a>
 
-                    <li>
-                        <a href="#reports">
-                            Reports
-                        </a>
-                    </li>
+                <a href="#reports">
+                    Reports
+                </a>
 
-                    <li>
-                        <a href="#settings">
-                            Settings
-                        </a>
-                    </li>
-
-                </ul>
+                <a href="#settings">
+                    Settings
+                </a>
 
             </nav>
 
@@ -142,14 +143,17 @@
 
 
         <!-- ==================================================
-             Main Content
+             MAIN
              ================================================== -->
 
-        <main id="main-content">
+        <main
+            id="main-content"
+            class="main-content"
+        >
 
 
             <!-- ==================================================
-                 Dashboard
+                 DASHBOARD
                  ================================================== -->
 
             <section
@@ -157,261 +161,335 @@
                 aria-labelledby="dashboard-title"
             >
 
-                <header class="section-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <p class="eyebrow">
+                        <span class="section-label">
                             Overview
-                        </p>
+                        </span>
 
                         <h1 id="dashboard-title">
-                            Dashboard
+                            Product Dashboard
                         </h1>
 
                         <p>
-                            Monitor products, business activity,
-                            and application data.
+                            Monitor your products, categories,
+                            and application status.
                         </p>
-
-                    </div>
-
-                </header>
-
-
-                <section aria-labelledby="summary-title">
-
-                    <h2 id="summary-title">
-                        Summary
-                    </h2>
-
-
-                    <div class="card-grid">
-
-
-                        <article class="dashboard-card">
-
-                            <h3>
-                                Live Products
-                            </h3>
-
-                            <p class="card-value">
-                                API
-                            </p>
-
-                            <p>
-                                Products loaded from a REST API.
-                            </p>
-
-                        </article>
-
-
-                        <article class="dashboard-card">
-
-                            <h3>
-                                Dynamic Search
-                            </h3>
-
-                            <p class="card-value">
-                                Live
-                            </p>
-
-                            <p>
-                                Filter products without reloading.
-                            </p>
-
-                        </article>
-
-
-                        <article class="dashboard-card">
-
-                            <h3>
-                                Local Cache
-                            </h3>
-
-                            <p class="card-value">
-                                ON
-                            </p>
-
-                            <p>
-                                Recent product data is cached locally.
-                            </p>
-
-                        </article>
-
-                    </div>
-
-                </section>
-
-            </section>
-
-
-            <!-- ==================================================
-                 Dynamic Products
-                 ================================================== -->
-
-            <section
-                id="products"
-                aria-labelledby="products-title"
-            >
-
-                <header class="section-header">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            REST API
-                        </p>
-
-                        <h2 id="products-title">
-                            Product Explorer
-                        </h2>
-
-                        <p>
-                            Search, filter, and sort live product data.
-                        </p>
-
-                    </div>
-
-                </header>
-
-
-                <!-- Error Banner -->
-
-                <div
-                    id="error-banner"
-                    class="error-banner"
-                    role="alert"
-                    aria-live="assertive"
-                    hidden
-                ></div>
-
-
-                <!-- Search and Sort Controls -->
-
-                <div class="product-controls">
-
-
-                    <div class="search-group">
-
-                        <label for="product-search">
-                            Search Products
-                        </label>
-
-                        <input
-                            type="search"
-                            id="product-search"
-                            name="product-search"
-                            placeholder="Search by product name..."
-                            autocomplete="off"
-                        >
-
-                    </div>
-
-
-                    <div class="sort-group">
-
-                        <label for="sort-products">
-                            Sort Products
-                        </label>
-
-                        <select
-                            id="sort-products"
-                            name="sort-products"
-                        >
-
-                            <option value="default">
-                                Default order
-                            </option>
-
-                            <option value="price-low">
-                                Price: Low to High
-                            </option>
-
-                            <option value="price-high">
-                                Price: High to Low
-                            </option>
-
-                            <option value="name">
-                                Name: A to Z
-                            </option>
-
-                        </select>
 
                     </div>
 
                 </div>
 
 
-                <!-- Category Tabs -->
+                <div class="dashboard-grid">
 
-                <section
-                    aria-labelledby="category-title"
-                    class="category-section"
-                >
 
-                    <h3 id="category-title">
+                    <article class="dashboard-card">
+
+                        <div class="card-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <p class="card-label">
+                                Total Products
+                            </p>
+
+                            <strong id="total-products">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="dashboard-card">
+
+                        <div class="card-icon">
+                            🗂️
+                        </div>
+
+                        <div>
+
+                            <p class="card-label">
+                                Categories
+                            </p>
+
+                            <strong id="total-categories">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="dashboard-card">
+
+                        <div class="card-icon">
+                            ●
+                        </div>
+
+                        <div>
+
+                            <p class="card-label">
+                                Application Status
+                            </p>
+
+                            <strong
+                                id="application-status"
+                                class="status-text"
+                            >
+                                Loading...
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 PRODUCTS
+                 ================================================== -->
+
+            <section
+                id="products"
+                class="products-section"
+                aria-labelledby="products-title"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            Catalog
+                        </span>
+
+                        <h2 id="products-title">
+                            Product Catalog
+                        </h2>
+
+                        <p>
+                            Search, filter, and sort products.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="add-product-button"
+                        class="primary-button"
+                    >
+                        + Add Product
+                    </button>
+
+                </div>
+
+
+                <!-- Product Controls -->
+
+                <div class="product-toolbar">
+
+                    <div class="product-controls">
+
+
+                        <div class="search-group">
+
+                            <label for="product-search">
+                                Search Products
+                            </label>
+
+                            <input
+                                type="search"
+                                id="product-search"
+                                placeholder="Search by product name or category..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <div class="search-group sort-group">
+
+                            <label for="sort-products">
+                                Sort By
+                            </label>
+
+                            <select id="sort-products">
+
+                                <option value="default">
+                                    Default
+                                </option>
+
+                                <option value="price-low">
+                                    Price: Low to High
+                                </option>
+
+                                <option value="price-high">
+                                    Price: High to Low
+                                </option>
+
+                                <option value="name">
+                                    Name: A to Z
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Categories -->
+
+                <div class="category-section">
+
+                    <h3>
                         Categories
                     </h3>
 
                     <div
                         id="category-tabs"
                         class="category-tabs"
-                        role="group"
                         aria-label="Product categories"
-                    ></div>
+                    >
+                    </div>
 
-                </section>
+                </div>
 
 
-                <!-- Loading Message -->
+                <!-- Error -->
+
+                <div
+                    id="error-banner"
+                    class="error-banner"
+                    role="alert"
+                    hidden
+                >
+                </div>
+
+
+                <!-- Loading -->
 
                 <div
                     id="loading-message"
                     class="loading-message"
-                    role="status"
-                    aria-live="polite"
                 >
+
                     Loading products...
+
                 </div>
 
 
-                <!-- Dynamic Product Container -->
+                <!-- Products -->
 
                 <div
                     id="product-container"
                     class="product-grid"
-                    aria-live="polite"
-                ></div>
+                >
+                </div>
 
             </section>
 
 
             <!-- ==================================================
-                 Reports
+                 REPORTS
                  ================================================== -->
 
             <section
                 id="reports"
+                class="content-section"
                 aria-labelledby="reports-title"
             >
 
-                <h2 id="reports-title">
-                    Reports
-                </h2>
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            Analytics
+                        </span>
+
+                        <h2 id="reports-title">
+                            Reports & Analysis
+                        </h2>
+
+                        <p>
+                            Review product catalog activity
+                            and application information.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-                <article class="report-card">
+                <article class="content-card">
 
                     <h3>
-                        Dynamic Data Report
+                        Product Management Report
                     </h3>
 
                     <p>
-                        Product information is retrieved asynchronously
-                        from a public REST API and updated dynamically
-                        without a full-page reload.
+                        ProductFlow provides a centralized
+                        interface for managing product
+                        information, categories, and catalog
+                        data.
                     </p>
+
+                    <div class="report-grid">
+
+                        <div class="report-item">
+
+                            <span>
+                                Catalog
+                            </span>
+
+                            <strong>
+                                Dynamic
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Data Source
+                            </span>
+
+                            <strong>
+                                REST API
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Client State
+                            </span>
+
+                            <strong>
+                                Persistent
+                            </strong>
+
+                        </div>
+
+                    </div>
 
                 </article>
 
@@ -419,33 +497,60 @@
 
 
             <!-- ==================================================
-                 Settings
+                 SETTINGS
                  ================================================== -->
 
             <section
                 id="settings"
+                class="content-section"
                 aria-labelledby="settings-title"
             >
 
-                <h2 id="settings-title">
-                    Settings
-                </h2>
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            Configuration
+                        </span>
+
+                        <h2 id="settings-title">
+                            Settings
+                        </h2>
+
+                        <p>
+                            Manage local application data.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-                <article class="settings-card">
+                <article class="content-card">
 
                     <h3>
-                        Client Preferences
+                        Local Data
                     </h3>
 
                     <p>
-                        Product data caching is handled using
-                        browser localStorage.
+                        Clear locally cached product data
+                        and reload the latest information.
                     </p>
+
+
+                    <button
+                        type="button"
+                        id="clear-cache-button"
+                        class="secondary-button"
+                    >
+                        Clear Cached Data
+                    </button>
 
                 </article>
 
             </section>
+
 
         </main>
 
@@ -453,21 +558,24 @@
 
 
     <!-- ==================================================
-         Footer
+         FOOTER
          ================================================== -->
 
     <footer class="site-footer">
 
         <p>
-            &copy; 2026 Enterprise Dashboard.
-            Built with HTML5, CSS3, and JavaScript ES6+.
+            ProductFlow &copy; 2026
+        </p>
+
+        <p>
+            Accessible Product Management Dashboard
         </p>
 
     </footer>
 
 
     <!-- ==================================================
-         JavaScript Application
+         JAVASCRIPT
          ================================================== -->
 
     <script
