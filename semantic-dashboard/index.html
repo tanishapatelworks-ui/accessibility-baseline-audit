@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Accessible enterprise dashboard built with semantic HTML5 and WCAG 2.1 accessibility principles"
+        content="Responsive accessible enterprise dashboard with dynamic REST API product data"
     >
 
-    <title>Accessible Enterprise Dashboard</title>
+    <title>Enterprise Dashboard</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- Skip Link -->
-    <a class="skip-link" href="#main-content">
+    <!-- Skip Navigation -->
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
         Skip to main content
     </a>
+
 
     <!-- ==================================================
          Header
          ================================================== -->
+
     <header class="site-header">
 
         <div class="header-content">
@@ -36,21 +52,33 @@
                 Enterprise Dashboard
             </a>
 
-            <!-- Primary Navigation -->
+
             <nav aria-label="Primary navigation">
 
                 <ul class="nav-list">
 
                     <li>
-                        <a href="#dashboard">Dashboard</a>
+                        <a href="#dashboard">
+                            Dashboard
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#reports">Reports</a>
+                        <a href="#products">
+                            Products
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#settings">Settings</a>
+                        <a href="#reports">
+                            Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#settings">
+                            Settings
+                        </a>
                     </li>
 
                 </ul>
@@ -65,12 +93,12 @@
     <!-- ==================================================
          Page Layout
          ================================================== -->
+
     <div class="page-layout">
 
 
-        <!-- ==================================================
-             Sidebar
-             ================================================== -->
+        <!-- Sidebar -->
+
         <aside
             class="sidebar"
             aria-label="Dashboard sidebar"
@@ -89,14 +117,8 @@
                     </li>
 
                     <li>
-                        <a href="#projects">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#team">
-                            Team
+                        <a href="#products">
+                            Products
                         </a>
                     </li>
 
@@ -122,12 +144,14 @@
         <!-- ==================================================
              Main Content
              ================================================== -->
+
         <main id="main-content">
 
 
             <!-- ==================================================
-                 Dashboard Section
+                 Dashboard
                  ================================================== -->
+
             <section
                 id="dashboard"
                 aria-labelledby="dashboard-title"
@@ -146,29 +170,15 @@
                         </h1>
 
                         <p>
-                            Monitor projects, team activity,
-                            and business performance.
+                            Monitor products, business activity,
+                            and application data.
                         </p>
 
                     </div>
 
-
-                    <!-- Accessible Button -->
-                    <button
-                        type="button"
-                        id="open-modal"
-                        aria-haspopup="dialog"
-                        aria-controls="project-modal"
-                    >
-                        Add Project
-                    </button>
-
                 </header>
 
 
-                <!-- ==================================================
-                     Summary Section
-                     ================================================== -->
                 <section aria-labelledby="summary-title">
 
                     <h2 id="summary-title">
@@ -179,55 +189,52 @@
                     <div class="card-grid">
 
 
-                        <!-- Article 1 -->
                         <article class="dashboard-card">
 
                             <h3>
-                                Active Projects
+                                Live Products
                             </h3>
 
                             <p class="card-value">
-                                12
+                                API
                             </p>
 
                             <p>
-                                Projects currently in progress.
+                                Products loaded from a REST API.
                             </p>
 
                         </article>
 
 
-                        <!-- Article 2 -->
                         <article class="dashboard-card">
 
                             <h3>
-                                Completed Tasks
+                                Dynamic Search
                             </h3>
 
                             <p class="card-value">
-                                84
+                                Live
                             </p>
 
                             <p>
-                                Tasks completed this month.
+                                Filter products without reloading.
                             </p>
 
                         </article>
 
 
-                        <!-- Article 3 -->
                         <article class="dashboard-card">
 
                             <h3>
-                                Team Members
+                                Local Cache
                             </h3>
 
                             <p class="card-value">
-                                24
+                                ON
                             </p>
 
                             <p>
-                                Members currently assigned.
+                                Recent product data is cached locally.
                             </p>
 
                         </article>
@@ -240,257 +247,142 @@
 
 
             <!-- ==================================================
-                 Projects / Data Table
+                 Dynamic Products
                  ================================================== -->
+
             <section
-                id="projects"
-                aria-labelledby="projects-title"
+                id="products"
+                aria-labelledby="products-title"
             >
 
-                <h2 id="projects-title">
-                    Project Overview
-                </h2>
+                <header class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            REST API
+                        </p>
+
+                        <h2 id="products-title">
+                            Product Explorer
+                        </h2>
+
+                        <p>
+                            Search, filter, and sort live product data.
+                        </p>
+
+                    </div>
+
+                </header>
 
 
-                <div class="table-container">
+                <!-- Error Banner -->
 
-                    <table>
-
-                        <caption>
-                            Current project status and assigned
-                            team members
-                        </caption>
-
-
-                        <thead>
-
-                            <tr>
-
-                                <th scope="col">
-                                    Project
-                                </th>
-
-                                <th scope="col">
-                                    Owner
-                                </th>
-
-                                <th scope="col">
-                                    Status
-                                </th>
-
-                                <th scope="col">
-                                    Due Date
-                                </th>
-
-                            </tr>
-
-                        </thead>
+                <div
+                    id="error-banner"
+                    class="error-banner"
+                    role="alert"
+                    aria-live="assertive"
+                    hidden
+                ></div>
 
 
-                        <tbody>
+                <!-- Search and Sort Controls -->
 
-                            <tr>
-
-                                <th scope="row">
-                                    Website Redesign
-                                </th>
-
-                                <td>
-                                    Priya Sharma
-                                </td>
-
-                                <td>
-                                    In Progress
-                                </td>
-
-                                <td>
-                                    <time datetime="2026-10-15">
-                                        October 15, 2026
-                                    </time>
-                                </td>
-
-                            </tr>
+                <div class="product-controls">
 
 
-                            <tr>
+                    <div class="search-group">
 
-                                <th scope="row">
-                                    Mobile Application
-                                </th>
+                        <label for="product-search">
+                            Search Products
+                        </label>
 
-                                <td>
-                                    Rahul Mehta
-                                </td>
+                        <input
+                            type="search"
+                            id="product-search"
+                            name="product-search"
+                            placeholder="Search by product name..."
+                            autocomplete="off"
+                        >
 
-                                <td>
-                                    Planning
-                                </td>
-
-                                <td>
-                                    <time datetime="2026-11-05">
-                                        November 5, 2026
-                                    </time>
-                                </td>
-
-                            </tr>
+                    </div>
 
 
-                            <tr>
+                    <div class="sort-group">
 
-                                <th scope="row">
-                                    Analytics Platform
-                                </th>
+                        <label for="sort-products">
+                            Sort Products
+                        </label>
 
-                                <td>
-                                    Anita Patel
-                                </td>
+                        <select
+                            id="sort-products"
+                            name="sort-products"
+                        >
 
-                                <td>
-                                    Completed
-                                </td>
+                            <option value="default">
+                                Default order
+                            </option>
 
-                                <td>
-                                    <time datetime="2026-09-20">
-                                        September 20, 2026
-                                    </time>
-                                </td>
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
 
-                            </tr>
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
 
-                        </tbody>
+                            <option value="name">
+                                Name: A to Z
+                            </option>
 
-                    </table>
+                        </select>
+
+                    </div>
 
                 </div>
 
-            </section>
+
+                <!-- Category Tabs -->
+
+                <section
+                    aria-labelledby="category-title"
+                    class="category-section"
+                >
+
+                    <h3 id="category-title">
+                        Categories
+                    </h3>
+
+                    <div
+                        id="category-tabs"
+                        class="category-tabs"
+                        role="group"
+                        aria-label="Product categories"
+                    ></div>
+
+                </section>
 
 
-            <!-- ==================================================
-                 Team Member Form
-                 ================================================== -->
-            <section
-                id="team"
-                aria-labelledby="team-title"
-            >
+                <!-- Loading Message -->
 
-                <h2 id="team-title">
-                    Team Member Form
-                </h2>
-
-
-                <form action="#" method="post">
-
-                    <fieldset>
-
-                        <legend>
-                            Member Information
-                        </legend>
+                <div
+                    id="loading-message"
+                    class="loading-message"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Loading products...
+                </div>
 
 
-                        <!-- Full Name -->
-                        <div class="form-group">
+                <!-- Dynamic Product Container -->
 
-                            <label for="full-name">
-                                Full Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="full-name"
-                                name="full-name"
-                                autocomplete="name"
-                                required
-                                
-                                placeholder="Enter full name"
-                            >
-
-                        </div>
-
-
-                        <!-- Email -->
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                autocomplete="email"
-                                required
-                                
-                                placeholder="name@example.com"
-                            >
-
-                        </div>
-
-
-                        <!-- Role -->
-                        <div class="form-group">
-
-                            <label for="role">
-                                Role
-                            </label>
-
-                            <select
-                                id="role"
-                                name="role"
-                                required
-                                
-                            >
-
-                                <option value="">
-                                    Select a role
-                                </option>
-
-                                <option value="manager">
-                                    Manager
-                                </option>
-
-                                <option value="developer">
-                                    Developer
-                                </option>
-
-                                <option value="designer">
-                                    Designer
-                                </option>
-
-                                <option value="tester">
-                                    Tester
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <!-- Additional Information -->
-                        <div class="form-group">
-
-                            <label for="message">
-                                Additional Information
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="4"
-                                placeholder="Enter additional information"
-                            ></textarea>
-
-                        </div>
-
-                    </fieldset>
-
-
-                    <button type="submit">
-                        Save Member
-                    </button>
-
-                </form>
+                <div
+                    id="product-container"
+                    class="product-grid"
+                    aria-live="polite"
+                ></div>
 
             </section>
 
@@ -498,6 +390,7 @@
             <!-- ==================================================
                  Reports
                  ================================================== -->
+
             <section
                 id="reports"
                 aria-labelledby="reports-title"
@@ -511,12 +404,13 @@
                 <article class="report-card">
 
                     <h3>
-                        Monthly Performance
+                        Dynamic Data Report
                     </h3>
 
                     <p>
-                        Project completion increased compared
-                        with the previous month.
+                        Product information is retrieved asynchronously
+                        from a public REST API and updated dynamically
+                        without a full-page reload.
                     </p>
 
                 </article>
@@ -527,6 +421,7 @@
             <!-- ==================================================
                  Settings
                  ================================================== -->
+
             <section
                 id="settings"
                 aria-labelledby="settings-title"
@@ -540,12 +435,12 @@
                 <article class="settings-card">
 
                     <h3>
-                        Notification Preferences
+                        Client Preferences
                     </h3>
 
                     <p>
-                        Manage dashboard notification preferences
-                        from this section.
+                        Product data caching is handled using
+                        browser localStorage.
                     </p>
 
                 </article>
@@ -560,120 +455,26 @@
     <!-- ==================================================
          Footer
          ================================================== -->
+
     <footer class="site-footer">
 
         <p>
             &copy; 2026 Enterprise Dashboard.
-            Built with semantic HTML5 and accessibility in mind.
+            Built with HTML5, CSS3, and JavaScript ES6+.
         </p>
 
     </footer>
 
 
     <!-- ==================================================
-         Accessible Modal Dialog
+         JavaScript Application
          ================================================== -->
-    <dialog
-        id="project-modal"
-        aria-labelledby="modal-title"
-    >
 
-        <div class="modal-content">
-
-            <header>
-
-                <h2 id="modal-title">
-                    Add New Project
-                </h2>
-
-            </header>
-
-
-            <form method="dialog">
-
-                <div class="form-group">
-
-                    <label for="project-name">
-                        Project Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="project-name"
-                        name="project-name"
-                        required
-                        
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="project-description">
-                        Project Description
-                    </label>
-
-                    <textarea
-                        id="project-description"
-                        name="project-description"
-                        rows="4"
-                    ></textarea>
-
-                </div>
-
-
-                <div class="modal-actions">
-
-                    <button type="submit">
-                        Create Project
-                    </button>
-
-                    <button
-                        type="button"
-                        id="close-modal"
-                    >
-                        Cancel
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </dialog>
-
-
-    <!-- ==================================================
-         Modal JavaScript
-         ================================================== -->
-    <script>
-
-        const modal =
-            document.getElementById("project-modal");
-
-        const openModalButton =
-            document.getElementById("open-modal");
-
-        const closeModalButton =
-            document.getElementById("close-modal");
-
-
-        openModalButton.addEventListener("click", () => {
-
-            modal.showModal();
-
-        });
-
-
-        closeModalButton.addEventListener("click", () => {
-
-            modal.close();
-
-        });
-
-    </script>
+    <script
+        type="module"
+        src="app.js"
+    ></script>
 
 </body>
+
 </html>
