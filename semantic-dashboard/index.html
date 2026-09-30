@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Accessible enterprise dashboard built with semantic HTML5 and WCAG 2.1 accessibility principles"
+    >
+
+    <title>Accessible Enterprise Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skip Link -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <!-- ==================================================
+         Header
+         ================================================== -->
+    <header class="site-header">
+
+        <div class="header-content">
+
+            <a
+                href="#"
+                class="brand"
+                aria-label="Enterprise Dashboard Home"
+            >
+                Enterprise Dashboard
+            </a>
+
+            <!-- Primary Navigation -->
+            <nav aria-label="Primary navigation">
+
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="#dashboard">Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="#reports">Reports</a>
+                    </li>
+
+                    <li>
+                        <a href="#settings">Settings</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         Page Layout
+         ================================================== -->
+    <div class="page-layout">
+
+
+        <!-- ==================================================
+             Sidebar
+             ================================================== -->
+        <aside
+            class="sidebar"
+            aria-label="Dashboard sidebar"
+        >
+
+            <nav aria-label="Sidebar navigation">
+
+                <h2>Menu</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#dashboard">
+                            Overview
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#team">
+                            Team
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#reports">
+                            Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#settings">
+                            Settings
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ==================================================
+             Main Content
+             ================================================== -->
+        <main id="main-content">
+
+
+            <!-- ==================================================
+                 Dashboard Section
+                 ================================================== -->
+            <section
+                id="dashboard"
+                aria-labelledby="dashboard-title"
+            >
+
+                <header class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Overview
+                        </p>
+
+                        <h1 id="dashboard-title">
+                            Dashboard
+                        </h1>
+
+                        <p>
+                            Monitor projects, team activity,
+                            and business performance.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Accessible Button -->
+                    <button
+                        type="button"
+                        id="open-modal"
+                        aria-haspopup="dialog"
+                        aria-controls="project-modal"
+                    >
+                        Add Project
+                    </button>
+
+                </header>
+
+
+                <!-- ==================================================
+                     Summary Section
+                     ================================================== -->
+                <section aria-labelledby="summary-title">
+
+                    <h2 id="summary-title">
+                        Summary
+                    </h2>
+
+
+                    <div class="card-grid">
+
+
+                        <!-- Article 1 -->
+                        <article class="dashboard-card">
+
+                            <h3>
+                                Active Projects
+                            </h3>
+
+                            <p class="card-value">
+                                12
+                            </p>
+
+                            <p>
+                                Projects currently in progress.
+                            </p>
+
+                        </article>
+
+
+                        <!-- Article 2 -->
+                        <article class="dashboard-card">
+
+                            <h3>
+                                Completed Tasks
+                            </h3>
+
+                            <p class="card-value">
+                                84
+                            </p>
+
+                            <p>
+                                Tasks completed this month.
+                            </p>
+
+                        </article>
+
+
+                        <!-- Article 3 -->
+                        <article class="dashboard-card">
+
+                            <h3>
+                                Team Members
+                            </h3>
+
+                            <p class="card-value">
+                                24
+                            </p>
+
+                            <p>
+                                Members currently assigned.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- ==================================================
+                 Projects / Data Table
+                 ================================================== -->
+            <section
+                id="projects"
+                aria-labelledby="projects-title"
+            >
+
+                <h2 id="projects-title">
+                    Project Overview
+                </h2>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <caption>
+                            Current project status and assigned
+                            team members
+                        </caption>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Project
+                                </th>
+
+                                <th scope="col">
+                                    Owner
+                                </th>
+
+                                <th scope="col">
+                                    Status
+                                </th>
+
+                                <th scope="col">
+                                    Due Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <th scope="row">
+                                    Website Redesign
+                                </th>
+
+                                <td>
+                                    Priya Sharma
+                                </td>
+
+                                <td>
+                                    In Progress
+                                </td>
+
+                                <td>
+                                    <time datetime="2026-10-15">
+                                        October 15, 2026
+                                    </time>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <th scope="row">
+                                    Mobile Application
+                                </th>
+
+                                <td>
+                                    Rahul Mehta
+                                </td>
+
+                                <td>
+                                    Planning
+                                </td>
+
+                                <td>
+                                    <time datetime="2026-11-05">
+                                        November 5, 2026
+                                    </time>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <th scope="row">
+                                    Analytics Platform
+                                </th>
+
+                                <td>
+                                    Anita Patel
+                                </td>
+
+                                <td>
+                                    Completed
+                                </td>
+
+                                <td>
+                                    <time datetime="2026-09-20">
+                                        September 20, 2026
+                                    </time>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 Team Member Form
+                 ================================================== -->
+            <section
+                id="team"
+                aria-labelledby="team-title"
+            >
+
+                <h2 id="team-title">
+                    Team Member Form
+                </h2>
+
+
+                <form action="#" method="post">
+
+                    <fieldset>
+
+                        <legend>
+                            Member Information
+                        </legend>
+
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+
+                            <label for="full-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="full-name"
+                                name="full-name"
+                                autocomplete="name"
+                                required
+                                
+                                placeholder="Enter full name"
+                            >
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                                
+                                placeholder="name@example.com"
+                            >
+
+                        </div>
+
+
+                        <!-- Role -->
+                        <div class="form-group">
+
+                            <label for="role">
+                                Role
+                            </label>
+
+                            <select
+                                id="role"
+                                name="role"
+                                required
+                                
+                            >
+
+                                <option value="">
+                                    Select a role
+                                </option>
+
+                                <option value="manager">
+                                    Manager
+                                </option>
+
+                                <option value="developer">
+                                    Developer
+                                </option>
+
+                                <option value="designer">
+                                    Designer
+                                </option>
+
+                                <option value="tester">
+                                    Tester
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Additional Information -->
+                        <div class="form-group">
+
+                            <label for="message">
+                                Additional Information
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                placeholder="Enter additional information"
+                            ></textarea>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <button type="submit">
+                        Save Member
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ==================================================
+                 Reports
+                 ================================================== -->
+            <section
+                id="reports"
+                aria-labelledby="reports-title"
+            >
+
+                <h2 id="reports-title">
+                    Reports
+                </h2>
+
+
+                <article class="report-card">
+
+                    <h3>
+                        Monthly Performance
+                    </h3>
+
+                    <p>
+                        Project completion increased compared
+                        with the previous month.
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- ==================================================
+                 Settings
+                 ================================================== -->
+            <section
+                id="settings"
+                aria-labelledby="settings-title"
+            >
+
+                <h2 id="settings-title">
+                    Settings
+                </h2>
+
+
+                <article class="settings-card">
+
+                    <h3>
+                        Notification Preferences
+                    </h3>
+
+                    <p>
+                        Manage dashboard notification preferences
+                        from this section.
+                    </p>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==================================================
+         Footer
+         ================================================== -->
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 Enterprise Dashboard.
+            Built with semantic HTML5 and accessibility in mind.
+        </p>
+
+    </footer>
+
+
+    <!-- ==================================================
+         Accessible Modal Dialog
+         ================================================== -->
+    <dialog
+        id="project-modal"
+        aria-labelledby="modal-title"
+    >
+
+        <div class="modal-content">
+
+            <header>
+
+                <h2 id="modal-title">
+                    Add New Project
+                </h2>
+
+            </header>
+
+
+            <form method="dialog">
+
+                <div class="form-group">
+
+                    <label for="project-name">
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="project-name"
+                        name="project-name"
+                        required
+                        
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="project-description">
+                        Project Description
+                    </label>
+
+                    <textarea
+                        id="project-description"
+                        name="project-description"
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button type="submit">
+                        Create Project
+                    </button>
+
+                    <button
+                        type="button"
+                        id="close-modal"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- ==================================================
+         Modal JavaScript
+         ================================================== -->
+    <script>
+
+        const modal =
+            document.getElementById("project-modal");
+
+        const openModalButton =
+            document.getElementById("open-modal");
+
+        const closeModalButton =
+            document.getElementById("close-modal");
+
+
+        openModalButton.addEventListener("click", () => {
+
+            modal.showModal();
+
+        });
+
+
+        closeModalButton.addEventListener("click", () => {
+
+            modal.close();
+
+        });
+
+    </script>
+
+</body>
+</html>
